@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apprenez à jouer au Compte Est Bon, règles et astuces pour ce jeu mathématique">
+    <meta name="keywords" content="Le Compte Est Bon, règles du jeu, astuces, stratégie, calcul mental">
+    <meta name="author" content="Yassine">
+    <title>Comment Jouer | Le Compte Est Bon</title>
+    <link rel="icon" type="image/png" href="im7.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Même style que la page principale */
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #f8f9fc;
+            --text-color: #5a5c69;
+            --light-accent: #e3e6f0;
+            --dark-accent: #224abe;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .logo-img {
+            height: 30px;
+            margin-right: 8px;
+        }
+        
+        .nav-link {
+            color: var(--text-color);
+            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .header-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+        }
+        
+        .header-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .header-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            animation: fadeInUp 1.2s ease;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            transition: transform 0.5s ease;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin-top: 10px;
+        }
+        
+        .rule-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .rule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .rule-card .card-title {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .rule-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .example-section {
+            background-color: var(--secondary-color);
+            padding: 60px 0;
+        }
+        
+        .example-img {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+        
+        .example-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .tips-list li {
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .footer-link {
+            color: var(--light-accent);
+            transition: color 0.3s;
+        }
+        
+        .footer-link:hover {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-icon {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: white;
+            transition: transform 0.3s;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Animations */
+        .section-title.reveal {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .section-title {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        
+        .rule-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s;
+        }
+        
+        .rule-card.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-section {
+                padding: 40px 0;
+            }
+            
+            .header-section h1 {
+                font-size: 2rem;
+            }
+            
+            .header-section p {
+                font-size: 1rem;
+            }
+            
+            .section-padding {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html.html">
+            <img src="im7.png" alt="Logo" class="logo-img">
+            Le Compte Est Bon
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html.html#about">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html.html#features">Fonctionnalités</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html.html#download">Télécharger</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Comment Jouer</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Header Section -->
+    <header class="header-section text-center">
+        <div class="container">
+            <h1>Présentation détaillée du programme</h1>
+            <p class="lead">Découvrez les détails techniques et les défis de notre projet NSI</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Introduction -->
+        <section class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title">Présentation détaillée</h2>
+                <p class="lead">Pour les plus curieux, voici une présentation plus détaillée du programme Python du compte est bon. Cette page explique le fonctionnement des principales fonctions du programme, sans détailler chaque ligne de code.</p>
+            </div>
+        </section>
+
+        <!-- Functionality Sections -->
+        <section class="mb-5">
+            <h3 class="section-title">Fonctionnalités principales</h3>
+            
+            <!-- Feature 1 -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <img src="iM4.png" class="img-fluid" alt="Interface du jeu">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card p-4">
+                        <h4 class="card-title"><i class="fas fa-random text-primary me-2"></i>Génération aléatoire</h4>
+                        <p>Cette première partie contient le tirage des 6 nombres aléatoires et du nombre cible à atteindre, ainsi que la création de la fenêtre principale de l'interface graphique, incluant couleur et taille de la fenêtre.</p>
+                        <div class="code-feature">
+                            <pre><code>liste=[1,2,3,4,5,6,7,8,9,10,25,50,75,100]
+liste1=[]
+for i in range(6):
+    liste1.append(choice(liste))
+nb=randrange(101,1000)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="image-container">
+                        <img src="Image 6.png" class="img-fluid" alt="Calcul et opérations">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="card p-4">
+                        <h4 class="card-title"><i class="fas fa-calculator text-primary me-2"></i>Calcul et opérations</h4>
+                        <p>La suite du programme permet le calcul, le choix de l'opérateur (+, -, /, x) et la sélection des nombres à utiliser pour remplir les cases du jeu.</p>
+                        <div class="code-feature">
+                            <pre><code>def calc():
+    global lis
+    if lis[2]=="+":
+        d=(lis[0]+lis[1])
+    if lis[2]=="X":
+        d=(lis[0]*lis[1])
+    # etc.</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <img src="Image7.png" class="img-fluid" alt="Interface graphique">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card p-4">
+                        <h4 class="card-title"><i class="fas fa-desktop text-primary me-2"></i>Interface graphique</h4>
+                        <p>La dernière partie du programme est dédiée à la création de l'interface graphique : boutons, couleurs, et disposition des éléments, pour assurer une présentation agréable et fonctionnelle.</p>
+                        <div class="code-feature">
+                            <pre><code>btna = tk.Button(fenetre,text=str(liste1[0]),padx = 10,pady = 10,command=ajouta)
+btnb = tk.Button(fenetre,text=str(liste1[1]),padx = 10,pady = 10,command=ajoutb)
+# etc.</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges Section -->
+        <section class="mb-5">
+            <h3 class="section-title">Difficultés rencontrées</h3>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h4>Interface graphique</h4>
+                            <p>Créer une interface graphique agréable et fonctionnelle, similaire à la réalité, a représenté un défi majeur.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>Gestion du temps</h4>
+                            <p>Gérer le temps nécessaire pour obtenir le résultat attendu s'est avéré plus complexe que prévu.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-mouse-pointer"></i>
+                            </div>
+                            <h4>Boutons fonctionnels</h4>
+                            <p>Surmonter des défis liés à la création de boutons fonctionnels, notamment pour la gestion des événements.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Compréhension approfondie</h4>
+                            <p>Acquérir une meilleure compréhension des défis auxquels font face les développeurs de jeux.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Try the Game -->
+        <section class="text-center py-4 mb-5">
+            <div class="card p-5">
+                <h3 class="card-title mb-4">Envie d'essayer le jeu ?</h3>
+                <p class="lead mb-4">Vous pouvez télécharger et exécuter notre programme Python pour tester vous-même "Le Compte Est Bon" !</p>
+                <div class="text-center">
+                    <a href="Le compte est bon.py" download class="btn btn-primary btn-lg">
+                        <i class="fas fa-download me-2"></i>Télécharger le jeu
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Home -->
+        <div class="text-center mb-5">
+            <a href="index.html.html" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left me-2"></i>Retour à l'accueil
+            </a>
+        </div>
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2024 Yassine HABA et Souidi Zakaria. Tous droits réservés.</p>
+            <p>Projet NSI - Première</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript personnalisé -->
+    <script src="script.js"></script>
+</body>
+</html>
